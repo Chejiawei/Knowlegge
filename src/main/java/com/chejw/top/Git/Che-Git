@@ -1,0 +1,58 @@
+查看当前User和Email配置
+git config --local --list
+
+git config --list
+
+配置
+local   仓库级别
+global 用户级别
+
+法一：使用命令修改git的用户名和提交的邮箱
+命令分别为：
+
+设置用户名和邮箱
+git config --global user.name "username"
+git config --global user.email  useremail@qq.com
+
+查看是否设置成功
+git config user.name
+git config user.email
+
+在git中，我们使用git config 命令用来配置git的配置文件，git配置级别主要有以下3类：
+
+1、 local   仓库级别
+2、 global 用户级别，当前用户在所有仓库都用这个配置（C:\Users\XiaoRui\.gitconfig）
+3、 system 系统级别，整台计算机都用这个配置（D:\Program Files\Git\etc\gitconfig）
+
+优先级
+git config （git config  --local ） > git config --global > git config --system。
+
+修改当前的 project
+        git 修改当前的project的用户名的命令为：git config user.name 你的目标用户名;
+        git 修改当前的project提交邮箱的命令为：git config user.email 你的目标邮箱名;
+
+法二：直接修改git的配置文件的方式来进行修改
+       1） 打开全局的.gitconfig文件的命令为：$  vi ~/.gitconfig;   然后在文件中直接修改即可.
+       2） 打开当前project 中的config文件，该文件在每个project中的.git目录下，直接进入该目录进行编辑即可。当然，如果没有进行过修改的话，默认打开时没有对应的用户名和密码的。只有进行过修改之后，才会在config中产生对应字段。
+
+
+git 的配置文件在哪-全局配置
+
+-例如用户名，邮箱等，位于文件：
+
+~/.gitconfig
+
+-例如Windows下，则是
+
+C:\Users\lanyang\.gitconfig
+
+各个仓库的配置
+
+在仓库目录下
+
+.git/config
+
+/home/lanyang/orange/.git/config
+
+以上的配置都可以通过命令查看
+$ git config –list
